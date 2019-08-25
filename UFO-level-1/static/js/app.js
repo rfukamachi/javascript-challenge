@@ -22,6 +22,8 @@ var tbody = d3.select("tbody");
 // Functon to display full table
 /*********************************************************/
 function displayFullTable() {
+    // clear the table before refilling it with data
+    tbody.html("");
     // use d3 to append 1 cell per report value:
     tableData.forEach((report) => {
         // console.log(report);
@@ -79,16 +81,4 @@ function handleFilterClick() {
 /*********************************************************/
 filterButton.on('click', handleFilterClick);
 
-
-
-
-// function doNothing(event) {
-//     if (event.keyCode === 13) {
-//         event.preventDefault();
-//         filterButton.focus();
-//         handleFilterClick();
-//     }
-// };
-
-// inputDate.on('keypress', doNothing);
 

@@ -30,6 +30,8 @@ var inputShape = d3.select('#shape');
 // FUNCTION: Display the full table without filters
 /*********************************************************/
 function displayFullTable() {
+    // clear the table before refilling it with data
+    tbody.html("");
     // use d3 to append 1 cell per report value:
     tableData.forEach((report) => {
         // console.log(report);

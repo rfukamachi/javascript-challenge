@@ -1,6 +1,15 @@
+/*********************************************************/
+/*********************************************************/
+// UFO LEVEL 1
+/*********************************************************/
+/*********************************************************/
+
 // from data.js
+/*********************************************************/
 var tableData = data;
 
+
+/*********************************************************/
 // select the button:
 var filterButton = d3.select(".btn");
 // DTM: date time input field:
@@ -9,6 +18,9 @@ var inputDate = d3.select("#datetime");
 var tbody = d3.select("tbody");
 
 
+/*********************************************************/
+// Functon to display full table
+/*********************************************************/
 function displayFullTable() {
     // use d3 to append 1 cell per report value:
     tableData.forEach((report) => {
@@ -22,11 +34,17 @@ function displayFullTable() {
     });
 };
 
+
+
+/*********************************************************/
 //display full table when first opening the page:
+/*********************************************************/
 displayFullTable();
 
-//handler to filter the list accordingly 
-//once the button is clicked:
+
+/*********************************************************/
+//handler to filter the list accordingly once the button is clicked:
+/*********************************************************/
 function handleFilterClick() {
     
     // retrieve the value in the input field:
@@ -52,23 +70,25 @@ function handleFilterClick() {
                 tcell.text(value);
             });
         });
-
-        //debug stmt:
-        console.log(inputDate);
-        console.log('New DTM: ', newDate);
-        console.log(filteredTable);
     }
 };
 
+
+/*********************************************************/
+// Call the filter function when filter button is clicked
+/*********************************************************/
 filterButton.on('click', handleFilterClick);
 
 
 
-// inputDate.addEventListener("keyup", function(event) {
-//     //if user presses enter, do nothing:
+
+// function doNothing(event) {
 //     if (event.keyCode === 13) {
 //         event.preventDefault();
+//         filterButton.focus();
 //         handleFilterClick();
 //     }
-// });
+// };
+
+// inputDate.on('keypress', doNothing);
 

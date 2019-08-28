@@ -18,6 +18,7 @@ var inputDate = d3.select("#datetime");
 var tbody = d3.select("tbody");
 
 
+
 /*********************************************************/
 // Functon to display full table
 /*********************************************************/
@@ -48,7 +49,7 @@ displayFullTable();
 //handler to filter the list accordingly once the button is clicked:
 /*********************************************************/
 function handleFilterClick() {
-    
+
     // retrieve the value in the input field:
     var newDate = inputDate.property('value');
 
@@ -81,4 +82,11 @@ function handleFilterClick() {
 /*********************************************************/
 filterButton.on('click', handleFilterClick);
 
+
+
+/*********************************************************/
+// Use D3 to prevent the page from reloading: 
+/*********************************************************/
+var form = d3.select('form');
+form.on('submit', () => d3.event.preventDefault())
 

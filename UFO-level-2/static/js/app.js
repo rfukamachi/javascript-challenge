@@ -126,3 +126,8 @@ function handleFilterClick() {
 filterButton.on('click', handleFilterClick);
 
 
+/*********************************************************/
+// Use D3 to prevent the page from reloading: 
+/*********************************************************/
+var form = d3.select('form');
+form.on('submit', () => d3.event.preventDefault())
